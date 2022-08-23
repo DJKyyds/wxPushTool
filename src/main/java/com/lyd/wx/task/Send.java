@@ -11,7 +11,7 @@ import java.text.ParseException;
 /**
  * 描述:
  *
- * @author liyadong
+ * @author djk
  * @create 2022-08-22-16:21-周一
  */
 @Component
@@ -58,8 +58,8 @@ public class Send {
         sendData.setWin(new Item(w.getWin(),"#88d3ce"));
         //附加数据
 
-        sendData.setTxt1(new Item("亲爱的乖乖宝贝，早上好！ (๑•̀ㅂ•́)و✧记得按时吃早饭午饭晚饭。今天也要开心哦ヽ(✿ﾟ▽ﾟ)ノ","#ff7eb3"));
-        sendData.setTxt2(new Item("下面由我来给你播报一下今天的天气状况╰(*°▽°*)╯","#f09819"));
+//        sendData.setTxt1(new Item("亲爱的乖乖宝贝，早上好！ (๑•̀ㅂ•́)و✧记得按时吃早饭午饭晚饭。今天也要开心哦ヽ(✿ﾟ▽ﾟ)ノ","#ff7eb3"));
+//        sendData.setTxt2(new Item("下面由我来给你播报一下今天的天气状况╰(*°▽°*)╯","#f09819"));
         //发送请求
         sendJson.setData(sendData);
         String s = restTemplate.postForObject(url, sendJson, String.class);

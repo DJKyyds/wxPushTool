@@ -13,7 +13,7 @@ import java.text.ParseException;
 /**
  * 描述:
  *
- * @author liyadong
+ * @author djk
  * @create 2022-08-22-1:06-周一
  */
 @Component
@@ -27,6 +27,7 @@ public class WxTask {
 
     //每天早上8点发送天气数据
     @Scheduled(cron="0 0 8 * * ?")
+//    @Scheduled(cron="0 17 10 ? * *")
     public void weatherWx() throws ParseException {
         //获取天气
         Weather weather = getData.weather();
@@ -38,19 +39,21 @@ public class WxTask {
     }
 
     //每天早上9点发送时间数据
-    @Scheduled(cron="0 0 9 * * ?")
-    public void dayWx() throws ParseException {
-        //获取天气
-        Weather weather = getData.weather();
-        String token = getData.getToken();
-        //给设定的用户循环发送
-        for(String uid:wx.getUsers()){
-            send.send2(token,uid);
-        }
-    }
+//    0 15 10 ? * *
+//    0 0 9 * * ?
+//    @Scheduled(cron="0 6 10 ? * *")
+//    public void dayWx() throws ParseException {
+//        //获取天气
+//        Weather weather = getData.weather();
+//        String token = getData.getToken();
+//        //给设定的用户循环发送
+//        for(String uid:wx.getUsers()){
+//            send.send2(token,uid);
+//        }
+//    }
 
     //在这个时间点提醒喝水
-    @Scheduled(cron="0 0 10,13,14,15,16,17,18,19,20,21,22,23 * * ?")
+    @Scheduled(cron="0 0 10,11,14,15,16,17,18,19,20,21,22,23 * * ?")
     public void drinkwaterWx(){
         //获取天气
         Weather weather = getData.weather();
